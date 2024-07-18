@@ -1,13 +1,14 @@
 <template>
-    <div class="portfolio">
-    
-    </div>
-    </template>
+    <MyPortfolio/>
+    <MyTestimonial/>
+</template>
     
     <script>
+     import MyPortfolio from "@/components/portfolio/MyPortfolio";
+     import MyTestimonial from "@/components/portfolio/MyTestimonial";
     export default{
         name: 'PortfolioView',
-        components:{}
+        components:{MyPortfolio,MyTestimonial}
     }
     </script>
     

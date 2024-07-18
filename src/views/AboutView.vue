@@ -1,14 +1,16 @@
 <template>
-  <div class="about">
-   
-  </div>
+<PageTitle/>
+  <AboutMe/>
+
 </template>
 
 
 <script>
+ import AboutMe from "@/components/about/AboutMe";
+ import PageTitle from "@/components/about/PageTitle";
 export default{
   name:'AboutView',
-  components:{}
+  components:{AboutMe,PageTitle}
 }
 </script>
 
