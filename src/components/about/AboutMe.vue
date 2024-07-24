@@ -181,38 +181,17 @@
               role="tabpanel"
               aria-labelledby="pills-profile-tab"
             >
-              <div class="skill pt-25">
-                <h6>Front-End</h6>
-                <div class="skill-content">
-                  <span>HTML5</span>
-                  <span>CSS3</span>
-                  <span>Bootstrap</span>
-                  <span>SASS</span>
-                  <span>JavaScript</span>
-                  <span>jQuery</span>
+              <div class="skill pt-25" v-for="(category,key) in categories" :key="key">
+                <h6>{{ category.name }}</h6>
+                <div class="skill-content" v-for="(subCategory,key1) in category.sub_category" :key="key1">
+                  <span>{{subCategory.name}}</span>
+                  
                 </div>
               </div>
 
-              <div class="skill">
-                <h6>Server</h6>
-                <div class="skill-content">
-                  <span>Cpanel</span>
-                  <span>SSL</span>
-                  <span>Domain &amp; Hosting Configuration</span>
-                </div>
-              </div>
+             
 
-              <div class="skill">
-                <h6>Others</h6>
-                <div class="skill-content">
-                  <span>WordPress</span>
-                  <span>Github</span>
-                  <span>WEB Image Optimization</span>
-                  <span>Adobe Photoshop</span>
-                  <span>Project Planning</span>
-                  <span>Client Handling</span>
-                </div>
-              </div>
+             
             </div>
             <!-- Tab-Two Ends Here -->
 
@@ -282,10 +261,31 @@
   
   
   <script>
+  import axios from "axios";
   export default{
     name:'AboutMe',
-    components:{}
-  }
+    data(){
+        return {
+            categories:'',
+        }
+    },
+
+    created()
+    {
+        this.getAllPublishedCategories();
+    },
+
+    methods:{
+        getAllPublishedCategories(){
+            axios.get('http://localhost/ete-portfolio/public/api/all-published-category').then((response)=>{
+                this.categories = response.data;
+            });
+        }
+
+    }
+   
+}
+  
   </script>
   
   
