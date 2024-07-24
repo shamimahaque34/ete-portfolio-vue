@@ -65,8 +65,30 @@
 
 
 <script>
+import axios from "axios";
 export default{
-    name: 'MyTestimonial'
+    name: 'MyTestimonial',
+    data(){
+
+return{
+    
+   infos :[],
+}
+},
+
+created()
+{
+this.getTestimonialInfo();
+},
+
+methods:{
+getTestimonialInfo(){
+    axios.get('http://localhost/ete-portfolio/public/api/testimonial-info').then((response)=>{
+        console.log(response.data);
+        // this.infos = response.data;
+    });
+}
+}
 }
 </script>
 
