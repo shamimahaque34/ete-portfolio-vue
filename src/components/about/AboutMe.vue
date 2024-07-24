@@ -183,8 +183,8 @@
             >
               <div class="skill pt-25" v-for="(category,key) in categories" :key="key">
                 <h6>{{ category.name }}</h6>
-                <div class="skill-content" v-for="(subCategory,key1) in category.sub_category" :key="key1">
-                  <span>{{subCategory.name}}</span>
+                <div class="skill-content" >
+                  <span v-for="(subCategory,key1) in category.sub_category" :key="key1">{{subCategory.name}}</span>
                   
                 </div>
               </div>
