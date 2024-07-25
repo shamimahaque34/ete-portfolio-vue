@@ -5,7 +5,8 @@
             <div class="col-md-4"  v-for="(service,key) in services" :key="key">
                 <div class="single-service">
                     <div class="service-icon">
-                        <i class="{{ service.service_icon }}"></i>
+                        <i v-bind:class="service.service_icon"></i>
+                     
                     </div>
                     <h4>{{ service.title }}</h4>
                     <p>{{ service.description }}</p>
@@ -38,6 +39,7 @@ import axios from "axios";
 return{
     
    services :[],
+   icons: ["laravel", "wordpress-simple"],
 }
 },
 
