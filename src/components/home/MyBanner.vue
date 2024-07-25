@@ -17,9 +17,9 @@
                    at an <span>Affordable</span> cost.
                 </p>
                 
-            <a href=""><button type="button" class="main-button">About</button></a>
-            <a href="">
-            <button type="button" class="another-button"> Recent Projects</button></a>
+            <router-link to="/about"><button type="button" @click="active = 'about'" class="main-button" :class="{active:active === 'about'}">About</button></router-link>
+            <router-link to="/portfolio">
+            <button type="button"  @click="active = 'portfolio'" class="another-button" :class="{active:active === 'portfolio'}"> Recent Projects</button></router-link>
   
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 banner-img">
@@ -39,7 +39,9 @@ import Typed from 'typed.js';
     name:'MyBanner',
     data(){
         return{
-            typed : ''
+            active: null ,
+            typed : '',
+            
         };
     },
 

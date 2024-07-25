@@ -10,11 +10,11 @@
                     </div>
                     <div class="testimonial-content">
                         <p class="description">
-                          I'm a Web Developer, based in Dhaka, Bangladesh. I did my bachelor
+                            I'm a Web Developer, based in Dhaka, Bangladesh. I did my bachelor
                           in Computer Science and Engineering. I also underwent several
                           trainings in Web Development at various renowned training
-                          institutions. I'm expert in HTML/HTML5, CSS/CSS3, Bootstrap 4,
-                          Wordpress Theme Customization, JavaScript, Php, Laravel and more.
+                          institutions. I'm expert in HTML/HTML5, CSS/CSS3, Bootstrap 4, Tailwind CSS,
+                          Wordpress Theme Customization, Wordpress Theme Development,JavaScript, Php, Laravel, Vue Js and more.
                         </p>
                         <h3 class="client-title">Shamima
                             <small class="post">Web Developer</small>
