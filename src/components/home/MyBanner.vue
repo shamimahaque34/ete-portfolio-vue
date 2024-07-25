@@ -5,9 +5,11 @@
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 banner-content">
            
            <h3>Looking for...</h3>
+
+
            
-            <h1>
-                <span class="type"></span>
+          <h1>
+                <span class="type" id="typedMessage"></span>
             </h1>
             
            
@@ -30,9 +32,31 @@
 
 
 <script>
+
+import Typed from 'typed.js';
+
  export default{
     name:'MyBanner',
- }
+    data(){
+        return{
+            typed : ''
+        };
+    },
+
+    mounted(){
+        this.typed = new Typed('#typedMessage',{
+                strings:["Web Design?",
+                "Web Development?",
+                "A WordPress Website?",
+                "eCommerce Solution?",],
+                typeSpeed:50,
+                backSpeed: 60,
+                loop: true
+        });
+    }
+
+    
+}
 
 </script>
 
