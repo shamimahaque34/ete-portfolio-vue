@@ -1,20 +1,20 @@
 <template>
    <div class="container">
       <div class="row">
-        <div class="col-md-6 details-left connect-info">
+        <div class="col-md-6 details-left connect-info" v-for="(contact,key) in contacts" :key="key">
           <div class="info-item">
             <strong>Phone</strong>
-            <p class="mb-0">+880 1313 924 759</p>
+            <p class="mb-0">{{ contact.phone }}</p>
           </div>
 
           <div class="info-item">
             <strong>Email</strong>
-            <p class="mb-0">haqueshamima34@gmail.com</p>
+            <p class="mb-0">{{ contact.email }}</p>
           </div>
 
           <div class="info-item">
             <strong>Address</strong>
-            <p class="mb-0">68/8-B,Zigatola,Dhanmondi,Dhaka-1209,Bangladesh</p>
+            <p class="mb-0">{{ contact.address }}</p>
           </div>
         </div>
 
@@ -39,10 +39,31 @@
   
   
   <script>
+  import axios from "axios";
   export default{
     name:'MyContact',
-    components:{}
+    data(){
+
+return{
+   
+   contacts :[],
+}
+},
+
+created()
+{
+this.getContactInfo();
+},
+
+methods:{
+getContactInfo(){
+    axios.get('http://localhost/ete-portfolio/public/api/contact-info').then((response)=>{
+        // console.log(response.data);
+        this.contacts = response.data;
+    });
+}
   }
+}
   </script>
   
   

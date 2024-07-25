@@ -28,45 +28,29 @@
   
             <div class="col-md-3 footer-content">
               <h3>Get in Touch</h3>
-              <div class="links">
+              <div class="links" v-for="(contact,key) in contacts" :key="key">
                 <ul>
-                  <li><a href="#">+880 1313 924 759</a></li>
-                  <li><a href="#">haqueshamima34@gmail.com</a></li>
+                  <li><a href="#">{{ contact.phone }}</a></li>
+                  <li><a href="#">{{ contact.email }}</a></li>
                   <li>
                     <a href="#">
-                      68/8-B,Zigatola,Dhanmondi,Dhaka-1209,Bangladesh
+                     {{ contact.address }}
                     </a>
                   </li>
                   <li>
-                    <div class="footer-connect">
-                      <div class="tab-connect-info">
+                    <div class="footer-connect" >
+                      <div class="tab-connect-info" >
                         <ul>
-                          <li>
+                          <li  v-for="(socialIcon,key) in socialIcons" :key="key">
                             <a
-                              href="https://www.facebook.com/shamima.haque.92560"
+                              :href="socialIcon.link"
                               target="_blank"
                             >
-                              <i class="fab fa-facebook-f"></i>
+                              <i v-bind:class="socialIcon.name"></i>
                             </a>
                           </li>
   
-                          <li>
-                            <a
-                              href="https://www.linkedin.com/in/shamima-haque-dev"
-                              target="_blank"
-                            >
-                              <i class="fab fa-linkedin-in"></i>
-                            </a>
-                          </li>
-  
-                          <li>
-                            <a
-                              href="https://github.com/shamimahaque34"
-                              target="_blank"
-                            >
-                              <i class="fab fa-github"></i>
-                            </a>
-                          </li>
+                         
                         </ul>
                       </div>
                     </div>
@@ -94,9 +78,39 @@
   </template>
   
   <script>
+  import axios from "axios";
   export default{
-    name: 'MyFooter'
+    name: 'MyFooter',
+    data(){
+
+return{
+   
+   contacts :[],
+   socialIcons : [],
+}
+},
+
+created()
+{
+this.getContactInfo();
+this.getSocialIconInfo();
+},
+
+methods:{
+getContactInfo(){
+    axios.get('http://localhost/ete-portfolio/public/api/contact-info').then((response)=>{
+        // console.log(response.data);
+        this.contacts = response.data;
+    });
+},
+getSocialIconInfo(){
+    axios.get('http://localhost/ete-portfolio/public/api/social-icon-info').then((response)=>{
+        // console.log(response.data);
+        this.socialIcons = response.data;
+    });
+}
    }
+  }
   </script>
   <style scoped>
   </style>
