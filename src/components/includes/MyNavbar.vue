@@ -13,19 +13,19 @@
 
   <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <router-link to="/" class="nav-link" >Home</router-link>
+      <li @click="active = 'home'" class="nav-item"  :class="{active:active === 'home'}">
+        <router-link to="/" class="nav-link">Home</router-link>
       </li>
-      <li class="nav-item">
+      <li @click="active = 'about'" class="nav-item" :class="{active:active === 'about'}">
         <router-link to="/about" class="nav-link">About</router-link>
       </li>
-      <li class="nav-item">
+      <li @click="active = 'services'" class="nav-item" :class="{active:active === 'services'}">
         <router-link to="/services" class="nav-link">Services</router-link>
       </li>
-       <li class="nav-item">
+       <li @click="active = 'portfolio'" class="nav-item" :class="{active:active === 'portfolio'}">
         <router-link to="/portfolio" class="nav-link">Portfolio</router-link>
       </li>
-       <li class="nav-item">
+       <li @click="active = 'contact'" class="nav-item" :class="{active:active === 'contact'}">
         <router-link to="/contact" class="nav-link">Contact</router-link>
       </li>
     </ul>
@@ -38,7 +38,10 @@
   
   <script>
   export default{
-    name: 'MyNavbar'
+    name: 'MyNavbar',
+    data() {
+  return { active: null }
+   }
    }
   </script>
   <style scoped>

@@ -2,6 +2,7 @@
 <div class="container section-padding">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <carousel>
             <div id="testimonial-slider" class="owl-carousel">
                 <div class="testimonial">
                     <div class="client">
@@ -58,6 +59,8 @@
                 </div>
                 
             </div>
+        </carousel>
+       
         </div>
     </div>
 </div>     
@@ -65,13 +68,22 @@
 
 
 <script>
+
+
+
+   
 import axios from "axios";
+
+// import carousel from "vue-owl-carousel";
+
 export default{
     name: 'MyTestimonial',
+    // components: { carousel },
+  
     data(){
 
 return{
-    
+   
    infos :[],
 }
 },
@@ -89,6 +101,7 @@ getTestimonialInfo(){
     });
 }
 }
+
 }
 </script>
 
