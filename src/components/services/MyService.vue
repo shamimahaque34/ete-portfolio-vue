@@ -39,7 +39,7 @@ import axios from "axios";
 return{
     
    services :[],
-   icons: ["laravel", "wordpress-simple"],
+
 }
 },
 

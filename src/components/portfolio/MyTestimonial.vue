@@ -3,20 +3,16 @@
     <div class="row">
         <div class="col-md-12">
             <div id="testimonial-slider" class="">
-                <div class="testimonial">
+                <div class="testimonial" v-for="(info,key) in infos" :key="key">
                     <div class="client">
-                        <img src="/assets/images/profile.jpeg" alt="">
+                        <img :src="info.image" alt="">
                     </div>
                     <div class="testimonial-content">
                         <p class="description">
-                            I'm a Web Developer, based in Dhaka, Bangladesh. I did my bachelor
-                          in Computer Science and Engineering. I also underwent several
-                          trainings in Web Development at various renowned training
-                          institutions. I'm expert in HTML/HTML5, CSS/CSS3, Bootstrap 4, Tailwind CSS,
-                          Wordpress Theme Customization, Wordpress Theme Development, JavaScript, Php, Laravel, Vue Js and more.
+                           {{ info.description }}
                         </p>
-                        <h3 class="client-title">Shamima
-                            <small class="post">Web Developer</small>
+                        <h3 class="client-title">{{ info.name }}
+                            <small class="post">{{ info.designation }}</small>
                         </h3>
                     </div>
                 </div>
@@ -30,9 +26,31 @@
   
   
   <script>
+  import axios from "axios";
   export default{
     name:'MyTestimonial',
-    components:{}
+    data(){
+
+return{
+   
+   infos :[],
+}
+},
+
+created()
+{
+this.getTestimonialInfo();
+},
+
+methods:{
+getTestimonialInfo(){
+    axios.get('http://localhost/ete-portfolio/public/api/testimonial-info').then((response)=>{
+        // console.log(response.data);
+        this.infos = response.data;
+    });
+}
+}
+
   }
   </script>
   
