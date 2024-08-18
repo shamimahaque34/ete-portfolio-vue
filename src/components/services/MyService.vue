@@ -50,7 +50,7 @@ this.getServiceInfo();
 
 methods:{
 getServiceInfo(){
-    axios.get('http://localhost/ete-portfolio/public/api/service-info').then((response)=>{
+    axios.get('https://admin.shamima.xyz/api/service-info').then((response)=>{
         // console.log(response.data);
         this.services = response.data;
     });

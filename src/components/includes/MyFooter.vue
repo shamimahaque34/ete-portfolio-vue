@@ -98,13 +98,13 @@ this.getSocialIconInfo();
 
 methods:{
 getContactInfo(){
-    axios.get('http://localhost/ete-portfolio/public/api/contact-info').then((response)=>{
+    axios.get('https://admin.shamima.xyz/api/contact-info').then((response)=>{
         // console.log(response.data);
         this.contacts = response.data;
     });
 },
 getSocialIconInfo(){
-    axios.get('http://localhost/ete-portfolio/public/api/social-icon-info').then((response)=>{
+    axios.get('https://admin.shamima.xyz/api/social-icon-info').then((response)=>{
         // console.log(response.data);
         this.socialIcons = response.data;
     });

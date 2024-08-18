@@ -44,7 +44,7 @@ this.getTestimonialInfo();
 
 methods:{
 getTestimonialInfo(){
-    axios.get('http://localhost/ete-portfolio/public/api/testimonial-info').then((response)=>{
+    axios.get('https://admin.shamima.xyz/api/testimonial-info').then((response)=>{
         // console.log(response.data);
         this.infos = response.data;
     });

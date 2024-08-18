@@ -277,7 +277,7 @@
 
     methods:{
         getAllPublishedCategories(){
-            axios.get('http://localhost/ete-portfolio/public/api/all-published-category').then((response)=>{
+            axios.get('https://admin.shamima.xyz/api/all-published-category').then((response)=>{
                 this.categories = response.data;
             });
         }
