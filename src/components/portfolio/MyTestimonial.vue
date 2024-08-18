@@ -8,8 +8,8 @@
                         <img :src="info.image" alt="">
                     </div>
                     <div class="testimonial-content">
-                        <p class="description">
-                           {{ info.description }}
+                         <p class="description" v-html="info.description">
+                          
                         </p>
                         <h3 class="client-title">{{ info.name }}
                             <small class="post">{{ info.designation }}</small>
